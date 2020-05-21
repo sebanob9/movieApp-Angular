@@ -8,11 +8,13 @@ import { MoviesService } from 'src/app/services/movies.service';
   styles: []
 })
 export class HomeComponent implements OnInit {
-
+  showTimes: any;
+  shows: any;
   constructor(private _ms: MoviesService) {
     this._ms.getNowPlaying()
       .subscribe(data => {
-        console.log(data);
+        this.showTimes = data;
+        this.shows = this.showTimes.results; // no se usa
       });
    }
 

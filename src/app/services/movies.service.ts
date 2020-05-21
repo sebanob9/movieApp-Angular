@@ -25,13 +25,16 @@ export class MoviesService {
     /* let url2 = `${ this.urlMovie}/discover/movie?api_key=${this.apikey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1` */
     return this.http.get(url)
       .pipe(map(res => res));
-  
+  }
+
+  getPopularKids() {
+    let url = `${this.urlMovie}/discover/movie?api_key=${this.apikey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
+    return this.http.get(url)
+      .pipe(map(res => res));
   }
 
   buscarPelicula( text:string ){
-
     let url = `${ this.urlMovie }/search/movie?query=${ text }&sort_by=popularity.desc&api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`;
-
     return this.http.get( url )
         .pipe(map(res => res));
   }

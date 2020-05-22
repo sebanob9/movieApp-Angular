@@ -10,11 +10,31 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class HomeComponent implements OnInit {
   showTimes: any;
   shows: any;
+
+  allPopulars: any;
+  populars: any;
+  
+  allUpcoming: any;
+  upcoming: any;
+
+  
   constructor(private _ms: MoviesService) {
     this._ms.getNowPlaying()
       .subscribe(data => {
         this.showTimes = data;
-        this.shows = this.showTimes.results; // no se usa
+        this.shows = this.showTimes.results; // si envío el results directamente, me da error el pipe slice
+      });
+
+    this._ms.getPopulars()
+      .subscribe(data => {
+        this.allPopulars = data;
+        this.populars = this.allPopulars.results;
+      });
+
+    this._ms.getUpcoming()
+      .subscribe(data => {
+        this.allUpcoming = data;
+        this.upcoming = this.allUpcoming.results;
       });
    }
 

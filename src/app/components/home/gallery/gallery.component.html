@@ -1,0 +1,50 @@
+<br>
+<h1>{{moviesTitle}}</h1>
+<hr>
+<div class="row animated animate__fadeInRight" *ngIf="allMovies">
+    <div class="col-sm-6">
+        <!-- {{allMovies.results[0].original_title}} -->
+        <div class="row">
+            <div    class="col-md-12 div-pic-1 pointer"
+                    [routerLink]="['/movie',allMovies[0].id, 'home'] "
+                    [ngStyle]="{ 'background-image': 'url( '+ (allMovies[0] | movieImage) +')' }">
+                    <p class="pic-title">{{allMovies[0].title}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 div-pic-2 pointer"
+            [routerLink]="['/movie',allMovies[1].id, 'home'] "
+            [ngStyle]="{ 'background-image': 'url( '+ (allMovies[1] | movieImage) +')' }">
+            <p class="pic-title">{{allMovies[1].title}}</p>
+            </div>
+            <div class="col-sm-6 div-pic-2 pointer"
+            [routerLink]="['/movie',allMovies[2].id, 'home'] "
+            [ngStyle]="{ 'background-image': 'url( '+ (allMovies[2] | movieImage) +')' }">
+            <p class="pic-title">{{allMovies[2].title}}</p>
+            </div>
+        </div> 
+    </div>
+    
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-6 div-pic-2 pointer"
+            [routerLink]="['/movie',allMovies[3].id, 'home'] "
+            [ngStyle]="{ 'background-image': 'url( '+ (allMovies[3] | movieImage) +')' }">
+            <p class="pic-title">{{allMovies[3].title}}</p>
+            </div>
+            <div class="col-sm-6 div-pic-2 pointer"
+            [routerLink]="['/movie',allMovies[4].id, 'home'] "
+            [ngStyle]="{ 'background-image': 'url( '+ (allMovies[4] | movieImage) +')' }">
+            <p class="pic-title">{{allMovies[4].title}}</p>
+            </div>
+        </div> 
+        <div class="row">
+            <div class="col-md-12 div-pic-1 pointer"
+            [routerLink]="['/movie',allMovies[5].id, 'home'] "
+            [ngStyle]="{ 'background-image': 'url( '+ (allMovies[5] | movieImage) +')' }">
+            <p class="pic-title">{{allMovies[5].title}}</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
